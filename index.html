@@ -10,15 +10,16 @@
     --text: #1d1d1b;
     --c15: #e4572e;
     --c5: #2e86ab;
+    --c1: #3a9d5d;
     --circle-text: #ffffff;
     box-sizing: border-box;
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --bg: #161615; --text: #f2f0ea; --c15: #f06a42; --c5: #48a3c9; }
+    :root:not([data-theme="light"]) { --bg: #161615; --text: #f2f0ea; --c15: #f06a42; --c5: #48a3c9; --c1: #55bd7a; }
   }
-  :root[data-theme="dark"] { --bg: #161615; --text: #f2f0ea; --c15: #f06a42; --c5: #48a3c9; }
+  :root[data-theme="dark"] { --bg: #161615; --text: #f2f0ea; --c15: #f06a42; --c5: #48a3c9; --c1: #55bd7a; }
   html { scroll-padding-top: env(safe-area-inset-top, 0px); height: 100%; }
   body {
     margin: 0; height: 100%;
@@ -33,7 +34,7 @@
     font-variant-numeric: tabular-nums;
     transition: transform .12s ease;
     position: relative;
-    bottom: 100px;
+    bottom: 200px;
   }
   #total.pop { transform: scale(1.1); }
   .row { display: flex; gap: 20px; position: absolute; flex-direction: column; right: 50px; bottom: 50px;}
@@ -56,6 +57,7 @@
   }
   #b15 { background: var(--c15); }
   #b5 { background: var(--c5); }
+  #b1 { background: var(--c1); }
 </style>
 </head>
 <body>
@@ -63,6 +65,7 @@
   <div class="row">
     <div class="wrap" style="--ring: var(--c15)"><button class="circle" id="b15" data-add="15">15</button></div>
     <div class="wrap" style="--ring: var(--c5)"><button class="circle" id="b5" data-add="5">5</button></div>
+    <div class="wrap" style="--ring: var(--c1)"><button class="circle" id="b1" data-add="1">1</button></div>
   </div>
 <script>
   let total = 0;
